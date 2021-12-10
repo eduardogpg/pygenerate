@@ -51,6 +51,6 @@ def create_virtual_env(path, environment='env'):
 
 def create_requirementes_txt(path, environment):
     try:
-        os.system(f"cd {path} && source {environment}/bin/activate && pip freeze > requirementes.txt")
+        os.system(f"cd {path} && source {environment}/bin/activate && pip freeze > requirements.txt")
     except Exception as err:
         print(">>", err)
