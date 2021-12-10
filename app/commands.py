@@ -44,7 +44,7 @@ def create_basic_files(path):
 def create_virtual_env(path, environment='env'):
     try:
         os.system(f"cd {path} && python -m venv {environment}")
-        create_requirementes_txt(path, environment)
+        # create_requirementes_txt(path, environment)
     except Exception as err:
         pass
     
