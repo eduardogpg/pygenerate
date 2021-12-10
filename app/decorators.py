@@ -12,37 +12,26 @@ def raise_error(directory):
     elif directory.is_dir():
         raise CreateFolderError(directory)
 
-    raise Exception('Was not possible to complete the task.')
+    raise Exception('The task could not be completed.')
 
 
 def delete_dir(directory):
     if directory.is_file():
         os.remove(directory)
-        
+
     elif directory.is_dir():
         shutil.rmtree(directory)
 
 
-def check_if_dir_exists(function):
+def check_if_folder_exists(function):
     
-    def wrapper(dir, path, force=False, *args, **kwargs):
-        directory = path / dir
-        
-        if directory.is_dir() or directory.is_file():
+    def wrapper(folder, path, force, *args, **kwargs):
+        current_path = path / folder
             
-            print(dir)
-            
-            if directory.exists() and force:
-                delete_dir(directory)
+        if current_path.exists() and force:
+            delete_dir(current_path)
 
-            response = function(dir, path, force)
-            return response
+        response = function(folder, path, force, *args, **kwargs)
+        return response
         
-        print(directory.is_dir())
-        print(directory.is_file())
-        print(directory.iterdir())
-        print(directory)
-        
-        raise_error(directory)
-    
     return wrapper

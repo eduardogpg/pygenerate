@@ -1,10 +1,10 @@
 import os
-from .decorators import check_if_dir_exists
 
 from .common import MAIN_CONTENT
 from .common import README_CONTENT
 from .common import GITIGNORE_CONTENT
 
+from .decorators import check_if_folder_exists
 
 def create_file(path, content):
     with open(path, 'w') as file:
@@ -13,28 +13,44 @@ def create_file(path, content):
     return True
 
 
-@check_if_dir_exists
+@check_if_folder_exists
 def create_app_folder(folder, path='./', force=False):
     
-    os.makedirs(folder)
-    
-    init_path = path / folder / '__init__.py'
-    config_path =  path / folder / 'config.py'
-    
-    create_file(init_path, '')
-    create_file(config_path, '')
+    current_path = path / folder
+    os.makedirs(current_path)
+
+    create_file(current_path / '__init__.py', '')
+    create_file(current_path / 'config.py', '')
 
 
-def create_basic_config(current_location, force=False):
+def create_basic_config(path, force=False):
     try:
-        create_app_folder('apps', current_location, force)
-        # create_basic_files(current_location)
+        create_app_folder('app', path, force)
+        
+        create_basic_files(path)
+        create_virtual_env(path)
+        
         
     except Exception as err:
-        print(err)
+        print(">>>", err)
 
 
-def create_basic_files(current_location):
-    create_file(current_location / 'mains.py', MAIN_CONTENT)
-    create_file(current_location / 'READMEs.md', README_CONTENT)
-    create_file(current_location / '.gitignores', GITIGNORE_CONTENT)
+def create_basic_files(path):
+    create_file(path / 'main.py', MAIN_CONTENT)
+    create_file(path / 'README.md', README_CONTENT)
+    create_file(path / '.gitignore', GITIGNORE_CONTENT)
+
+
+def create_virtual_env(path, environment='env'):
+    try:
+        os.system(f"cd {path} && python -m venv {environment}")
+        create_requirementes_txt(path, environment)
+    except Exception as err:
+        pass
+    
+
+def create_requirementes_txt(path, environment):
+    try:
+        os.system(f"cd {path} && source {environment}/bin/activate && pip freeze > requirementes.txt")
+    except Exception as err:
+        print(">>", err)
