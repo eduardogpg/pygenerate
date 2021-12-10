@@ -7,8 +7,9 @@ from app import create_basic_config
 @click.command()
 @click.option('--path', '-p', default=current_location)
 @click.option('--force', '-f', default=False)
-def main(path, force):
-    create_basic_config(Path(path), force)
+@click.option('--virtual', '-v', default=True)
+def main(path, force, virtual):
+    create_basic_config(Path(path), force, virtual)
 
 
 if __name__ == '__main__':

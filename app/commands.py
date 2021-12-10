@@ -23,13 +23,14 @@ def create_app_folder(folder, path='./', force=False):
     create_file(current_path / 'config.py', '')
 
 
-def create_basic_config(path, force=False):
+def create_basic_config(path, force=False, virtual_env=True):
     try:
         create_app_folder('app', path, force)
         
         create_basic_files(path)
-        create_virtual_env(path)
         
+        if virtual_env:
+            create_virtual_env(path)
         
     except Exception as err:
         print(">>>", err)
@@ -43,14 +44,14 @@ def create_basic_files(path):
 
 def create_virtual_env(path, environment='env'):
     try:
-        os.system(f"cd {path} && python -m venv {environment}")
-        # create_requirementes_txt(path, environment)
+        os.system(f"cd {path} && python3 -m venv {environment}")
+        create_requirementes_txt(path, environment)
     except Exception as err:
         pass
     
 
 def create_requirementes_txt(path, environment):
     try:
-        os.system(f"cd {path} && source {environment}/bin/activate && pip freeze > requirements.txt")
+        os.system(f"cd {path} && . {environment}/bin/activate && pip freeze > requirements.txt ")
     except Exception as err:
         print(">>", err)
