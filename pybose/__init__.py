@@ -1,2 +1,2 @@
-from .common import current_location
-from .commands import create_basic_config
+from pybose.common import current_location
+from pybose.commands import create_basic_config

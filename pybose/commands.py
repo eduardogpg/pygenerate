@@ -10,10 +10,11 @@ from .common import MIT_LICENSE
 
 from .decorators import check_if_folder_exists
 
+
 def create_file(path, content):
     with open(path, 'w') as file:
         file.write(content)
-    
+
     return True
 
 
@@ -31,13 +32,13 @@ def create_basic_config(path, force=False, virtual_env=True, upload=False):
     try:
         create_app_folder('app', path, force)
         create_basic_files(path)
-        
+
         if virtual_env:
             create_virtual_env(path)
-            
+
         if upload:
             create_pypi_files(path)
-        
+
     except Exception as err:
         print(">>>", err)
 
@@ -60,7 +61,7 @@ def create_virtual_env(path, environment='env'):
         create_requirementes_txt(path, environment)
     except Exception as err:
         pass
-    
+
 
 def create_requirementes_txt(path, environment):
     try:

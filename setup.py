@@ -2,14 +2,14 @@ from distutils.core import setup
 
 setup(
     name = 'pybose',
-    packages = ['app'],
-    version = '0.2',
+    packages = ['pybose'],
+    version = '0.3',
     license='MIT',
     description = 'Python generator project',
     author = 'Eduardo Ismael García Pérez',
     author_email = 'eduardo78d@gmail.com',
     url = 'https://github.com/eduardogpg/pybose',
-    download_url = 'https://github.com/eduardogpg/pybose/archive/refs/tags/0.2.tar.gz',
+    download_url = 'https://github.com/eduardogpg/pybose/archive/refs/tags/0.3.tar.gz',
     keywords = ['Python', 'Generator', 'Project'],
     install_requires=[
         'click'
