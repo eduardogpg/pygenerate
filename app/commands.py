@@ -4,6 +4,10 @@ from .common import MAIN_CONTENT
 from .common import README_CONTENT
 from .common import GITIGNORE_CONTENT
 
+from .commands import LICENSE
+from .commands import SETUP_PY
+from .commands import SETUP_CFG
+
 from .decorators import check_if_folder_exists
 
 def create_file(path, content):
@@ -40,6 +44,12 @@ def create_basic_files(path):
     create_file(path / 'main.py', MAIN_CONTENT)
     create_file(path / 'README.md', README_CONTENT)
     create_file(path / '.gitignore', GITIGNORE_CONTENT)
+
+
+def create_pypi_files(path):
+    create_file(path / 'setup.py', SETUP_PY)
+    create_file(path / 'setup.cfg', SETUP_CFG)
+    create_file(path / 'LICENSE.txt', LICENSE)
 
 
 def create_virtual_env(path, environment='env'):
