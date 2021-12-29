@@ -4,9 +4,9 @@ from .common import MAIN_CONTENT
 from .common import README_CONTENT
 from .common import GITIGNORE_CONTENT
 
-from .commands import LICENSE
-from .commands import SETUP_PY
-from .commands import SETUP_CFG
+from .common import SETUP_PY
+from .common import SETUP_CFG
+from .common import MIT_LICENSE
 
 from .decorators import check_if_folder_exists
 
@@ -27,14 +27,16 @@ def create_app_folder(folder, path='./', force=False):
     create_file(current_path / 'config.py', '')
 
 
-def create_basic_config(path, force=False, virtual_env=True):
+def create_basic_config(path, force=False, virtual_env=True, upload=False):
     try:
         create_app_folder('app', path, force)
-        
         create_basic_files(path)
         
         if virtual_env:
             create_virtual_env(path)
+            
+        if upload:
+            create_pypi_files(path)
         
     except Exception as err:
         print(">>>", err)
@@ -49,7 +51,7 @@ def create_basic_files(path):
 def create_pypi_files(path):
     create_file(path / 'setup.py', SETUP_PY)
     create_file(path / 'setup.cfg', SETUP_CFG)
-    create_file(path / 'LICENSE.txt', LICENSE)
+    create_file(path / 'LICENSE.txt', MIT_LICENSE)
 
 
 def create_virtual_env(path, environment='env'):
