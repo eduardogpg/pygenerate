@@ -9,7 +9,6 @@ setup(
     author = 'Eduardo Ismael García Pérez',
     author_email = 'eduardo78d@gmail.com',
     url = 'https://github.com/eduardogpg/pybose',
-    download_url = 'https://github.com/eduardogpg/pybose/archive/refs/tags/0.4.tar.gz',
     keywords = ['Python', 'Generator', 'Project'],
     install_requires=[
         'click'
