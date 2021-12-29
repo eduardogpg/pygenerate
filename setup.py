@@ -1,8 +1,8 @@
 from distutils.core import setup
 
 setup(
-    name = 'pybose',
-    packages = ['pybose'],
+    name = 'pylogi',
+    packages = ['pylogi'],
     version = '0.4',
     license='MIT',
     description = 'Python generator project',
@@ -15,7 +15,7 @@ setup(
         'click'
     ],
     classifiers=[
-        'Development Status :: 5 - Production',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'Programming Language :: Python :: 3.8',

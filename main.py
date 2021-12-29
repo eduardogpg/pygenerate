@@ -1,8 +1,8 @@
 import click
 from pathlib import Path
 
-from pybose import current_location
-from pybose import create_basic_config
+from pylogi import current_location
+from pylogi import create_basic_config
 
 @click.command()
 @click.option('--path', '-p', default=current_location)
