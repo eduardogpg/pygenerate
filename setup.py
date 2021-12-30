@@ -9,14 +9,14 @@ VERSION = '0.0.1'
 DESCRIPTION = 'Python generator project'
 
 setup(
-    name = 'Package Name',
-    packages = ['Package Name'],
+    name = 'pynumbat',
+    packages = ['pynumbat'],
     version = VERSION,
     license='MIT',
     description = DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
-    author = 'Eduardo Ismael García Pérez',
+    author = 'Eduardo Ismael Garcia Perez',
     author_email = 'eduardo78d@gmail.com',
     url = 'https://github.com/eduardogpg/pygenerate',
     keywords = ['Python Generate', 'Generate', 'Project'],

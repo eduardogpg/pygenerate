@@ -1,3 +1,3 @@
-### PyBose
+### PyNumbai
 
-Generador de proyectos Python
+Python generator project
