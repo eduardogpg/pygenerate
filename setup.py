@@ -5,13 +5,14 @@ from pathlib import Path
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
-VERSION = '0.0.2'
+VERSION = '0.0.4'
 DESCRIPTION = 'Python generator project'
 
 setup(
     name = 'pynumbat',
     packages = ['pynumbat'],
     entry_points={"console_scripts": ["pynumabt=pynumabt.__main__:main"]},
+    include_package_data=True,
     version = VERSION,
     license='MIT',
     description = DESCRIPTION,
