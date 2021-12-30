@@ -1,8 +1,6 @@
 import click
 from pathlib import Path
 
-import pynumbat
-
 from pynumbat import current_location
 from pynumbat import create_basic_config
 
