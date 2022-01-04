@@ -4,6 +4,7 @@ __PyNumbat__ is a Python project generator. Easy to install and easy to use.
 
 Files and folders to be created in the initial setup:
 
+```
 root/
 │
 ├── env/
@@ -18,7 +19,7 @@ root/
 ├── README.md
 ├── .gitignore
 └── main.py
-
+```
 
 ### Commands
 
