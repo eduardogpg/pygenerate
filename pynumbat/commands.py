@@ -22,17 +22,23 @@ def create_file(path, content):
 def create_app_folder(folder, path='./', force=False):
     
     current_path = path / folder
+    current_test_path = current_path / 'tests'
+    
     os.makedirs(current_path)
+    os.makedirs(current_test_path)
 
     create_file(current_path / '__init__.py', '')
+    create_file(current_path / '__main__.py', '')
     create_file(current_path / 'config.py', '')
+    
+    create_file(current_test_path / 'tests.py', '')
 
 
 def create_basic_config(path, force=False, virtual_env=True, upload=False):
     try:
         create_app_folder('app', path, force)
         create_basic_files(path)
-
+        
         if virtual_env:
             create_virtual_env(path)
 

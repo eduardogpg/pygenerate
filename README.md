@@ -18,13 +18,13 @@ root/
 │
 ├── README.md
 ├── .gitignore
+├── requirements.txt
 └── main.py
 ```
 
 ### Commands
 
 With a couple flags you can create a basic and functional setup for your python projects.  🐍
-
 
 ```python
 pynumbat -p <Path>
