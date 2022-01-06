@@ -1,4 +1,7 @@
 import os
+import sys
+
+import logging 
 
 from .common import MAIN_CONTENT
 from .common import README_CONTENT
@@ -46,7 +49,7 @@ def create_basic_config(path, force=False, virtual_env=True, upload=False):
             create_pypi_files(path)
 
     except Exception as err:
-        print(">>>", err)
+        logging.error(err)
 
 
 def create_basic_files(path):
@@ -63,14 +66,22 @@ def create_pypi_files(path):
 
 def create_virtual_env(path, environment='env'):
     try:
-        os.system(f"cd {path} && python3 -m venv {environment}")
-        create_requirementes_txt(path, environment)
+        if sys.version_info[0] == 3:
+            os.system(f"cd {path} && python -m venv {environment}")
+            create_requirementes_txt(path, environment)
+        else:
+            logging.warning('In order to create the virtual environment Python 3 its necessary.')
+            
     except Exception as err:
-        pass
+        return False
 
 
 def create_requirementes_txt(path, environment):
     try:
         os.system(f"cd {path} && . {environment}/bin/activate && pip freeze > requirements.txt ")
     except Exception as err:
-        print(">>", err)
+        logging.error(err)
+        
+
+def python_version():
+    return sys.version_info[0]

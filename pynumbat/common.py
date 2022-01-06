@@ -155,30 +155,40 @@ SETUP_CFG = """# Inside of setup.cfg
 description-file = README.md"""
 
 
-SETUP_PY = """from distutils.core import setup
+SETUP_PY = """from pathlib import Path
+from setuptools import setup
+
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
+
+VERSION = '0.0.1'
+DESCRIPTION = 'Description'
+PACKAGE_NAME = 'Package Name'
+AUTHOR = ''
+EMAIL = ''
+GITHUB_URL = ''
+
 setup(
-    name = 'YOURPACKAGENAME',
-    packages = ['YOURPACKAGENAME'],
-    version = '0.1',
+    name = PACKAGE_NAME,
+    packages = [DESCRIPTION],
+    version = VERSION,
     license='MIT',
-    description = 'TYPE YOUR DESCRIPTION HERE',
-    author = 'YOUR NAME',
-    author_email = 'your.email@domain.com',
-    url = 'https://github.com/user/reponame',
-    download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',
-    keywords = ['SOME', 'KEYWORDS'],
-    install_requires=[     
-            'beautifulsoup4',
-        ],
+    description = DESCRIPTION,
+    long_description_content_type="text/markdown",
+    long_description=long_description,
+    author = AUTHOR,
+    author_email = EMAIL,
+    url = GITHUB_URL,
+    keywords = [],
+    install_requires=[ 
+        'requests',
+    ],
     classifiers=[
-    'Development Status :: 3 - Alpha',
-    'Intended Audience :: Developers',
-    'Topic :: Software Development :: Build Tools',
-    'License :: OSI Approved :: MIT License', 
-    'Programming Language :: Python :: 3', 
-    'Programming Language :: Python :: 3.4',
-    'Programming Language :: Python :: 3.5',
-    'Programming Language :: Python :: 3.6',
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Build Tools',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
     ],
 )"""
 
