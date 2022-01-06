@@ -31,7 +31,7 @@ def create_app_folder(folder, path='./', force=False):
     os.makedirs(current_test_path)
 
     create_file(current_path / '__init__.py', '')
-    create_file(current_path / '__main__.py', '')
+    create_file(current_path / '__main__.py', MAIN_CONTENT)
     create_file(current_path / 'config.py', '')
     
     create_file(current_test_path / 'tests.py', '')
