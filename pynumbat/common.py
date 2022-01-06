@@ -5,10 +5,21 @@ current_location = Path.cwd()
 README_CONTENT = """### README
 """
 
-MAIN_CONTENT = """
+MAIN_CONTENT = ''''
+def main(*args, **kwargs):
+    """
+    Main Function
+    
+    Args:
+        None
+    Returns:
+        None
+    """
+    ...
+
 if __name__ == '__main__':
-    pass
-"""
+    main()
+'''
 
 GITIGNORE_CONTENT = """# Byte-compiled / optimized / DLL files
 __pycache__/
