@@ -66,11 +66,11 @@ def create_pypi_files(path):
 
 def create_virtual_env(path, environment='env'):
     try:
-        if sys.version_info[0] == 3:
+        if python_3_6_or_greater():
             os.system(f"cd {path} && python -m venv {environment}")
             create_requirementes_txt(path, environment)
         else:
-            logging.warning('In order to create the virtual environment Python 3 its necessary.')
+            logging.warning('In order to create the virtual environment Python >3.6 its necessary.')
             
     except Exception as err:
         return False
@@ -83,5 +83,6 @@ def create_requirementes_txt(path, environment):
         logging.error(err)
         
 
-def python_version():
-    return sys.version_info[0]
+def python_3_6_or_greater():
+    if sys.version_info[0] == 3 and sys.version_info[1] >= 3:
+        return True
