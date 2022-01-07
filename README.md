@@ -26,7 +26,7 @@ root/
 
 With a couple flags you can create a basic and functional setup for your python projects.  🐍
 
-The first, and the most importat flag, is -p. With this flag is possible define where the project will be created.
+The first flag, and the most important, is -p. With this flag is possible define where the project will be created.
 
 ```python
 pynumbat -p <Path>
