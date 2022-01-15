@@ -77,10 +77,13 @@ def create_virtual_env(path, environment='env'):
 
 def create_requirementes_txt(path, environment):
     try:
+        command = f"{environment}/bin/activate"
+        
         if sys.platform.startswith('win'):
-            os.system(f"cd {path} && {environment}\Scripts\activate && pip freeze > requirements.txt")
-        else:
-            os.system(f"cd {path} && . {environment}/bin/activate && pip freeze > requirements.txt")
+            command = f"{environment}\Scripts\\activate"
+        
+        os.system(f"cd {path} && {command} && pip freeze > requirements.txt")
+        
     except Exception as err:
         logging.error(err)
         
