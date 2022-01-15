@@ -5,8 +5,7 @@ current_location = Path.cwd()
 README_CONTENT = """### README
 """
 
-MAIN_CONTENT = ''''
-def main(*args, **kwargs):
+MAIN_CONTENT = '''def main(*args, **kwargs):
     """
     Main Function
     

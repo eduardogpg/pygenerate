@@ -3,9 +3,13 @@ from setuptools import setup, find_packages
 from pathlib import Path
 
 this_directory = Path(__file__).parent
-long_description = (this_directory / "README.md").read_text()
+# long_description = (this_directory / "README.md").read_text()
 
-VERSION = '0.1.6'
+with open(this_directory / "README.md", encoding="utf8") as file:
+    long_description = file.read()
+
+
+VERSION = '0.1.9'
 DESCRIPTION = 'Python generator project'
 
 setup(
@@ -21,7 +25,7 @@ setup(
     description = DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
-    author = 'Eduardo Ismael García Pérez',
+    author = 'Eduardo Ismael Garcia Perez',
     author_email = 'eduardo78d@gmail.com',
     url = 'https://github.com/eduardogpg/pygenerate',
     keywords = ['Python Generate', 'Generate', 'Project'],

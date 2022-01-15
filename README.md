@@ -24,7 +24,7 @@ root/
 
 ### Commands
 
-With a couple flags you can create a basic and functional setup for your python projects.  🐍
+With a couple flags you can create a basic and functional setup for your python projects. 
 
 The first flag, and the most important, is -p. With this flag is possible define where the project will be created.
 
@@ -50,4 +50,4 @@ pynumbat -p <Path> -f true -v false
 
 __Note__: by default __Pynumbat__ takes the current version of Python to create the virtual environment.
 
-In the next release you can select the version you want. 🍻
+In the next release you can select the version you want.
