@@ -60,7 +60,6 @@ def create_basic_files(path):
 
 def create_pypi_files(path):
     create_file(path / 'setup.py', SETUP_PY)
-    create_file(path / 'setup.cfg', SETUP_CFG)
     create_file(path / 'LICENSE.txt', MIT_LICENSE)
 
 

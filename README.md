@@ -32,11 +32,11 @@ The first flag, and the most important, is -p. With this flag is possible define
 pynumbat -p <Path>
 ```
 
-If the flag is not defined, by default, the project will be created in te current path.
+If the flag is not defined, the project will be created in te current path.
 
 ----
 
-If a previous python setup exists, you can overwrite it. This action will delete all files and folders previously existing
+If a previous python setup exists, you can overwrite it. This action will delete all files and folders previously existing.
 
 ```python
 pynumbat -p <Path> -f true
@@ -48,7 +48,6 @@ Optional, you can ommit the virtual env folder.
 pynumbat -p <Path> -f true -v false
 ```
 
-It is important to note that, by default __Pynumbat__ takes the current version of Python on your machine to create the virtual environment.
+__Note__: by default __Pynumbat__ takes the current version of Python to create the virtual environment.
 
 In the next release you can select the version you want. 🍻
-

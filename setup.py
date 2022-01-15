@@ -5,7 +5,7 @@ from pathlib import Path
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
-VERSION = '0.1.5'
+VERSION = '0.1.6'
 DESCRIPTION = 'Python generator project'
 
 setup(
@@ -21,7 +21,7 @@ setup(
     description = DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description,
-    author = 'Eduardo Ismael Garcia Perez',
+    author = 'Eduardo Ismael García Pérez',
     author_email = 'eduardo78d@gmail.com',
     url = 'https://github.com/eduardogpg/pygenerate',
     keywords = ['Python Generate', 'Generate', 'Project'],
