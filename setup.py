@@ -9,7 +9,7 @@ with open(this_directory / "README.md", encoding="utf8") as file:
     long_description = file.read()
 
 
-VERSION = '0.1.9'
+VERSION = '0.1.10'
 DESCRIPTION = 'Python generator project'
 
 setup(
